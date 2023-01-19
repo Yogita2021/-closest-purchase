@@ -101,9 +101,7 @@
         font-size: medium;
       }
       #lower > button:hover {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
-          rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
-          rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+      font-size: 20px;
         cursor: pointer;
       }
       .container {
@@ -114,8 +112,27 @@
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
           rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
       }
+      .container a{
+        text-decoration: none;
+         /* text-align: center; */
+         color: black;
+      /* margin-top:50px; */
+        /* margin-left: 4px; */
+       margin-top: 20px;
+       font-size: bold;
+      }
+      .container > div:nth-child(1){
+       display: flex;
+       flex-direction: column;
+      
+       
+      }
+      .container > div:nth-child(1)>img{
+        margin-left:40px;
+      }
+      
       .container > div {
-        /* border: 1px solid black; */
+      
         padding-left: 10px;
         padding-right: 10px;
         width: 110px;
@@ -129,13 +146,14 @@
       .container > div:first-child {
         margin-left: 170px;
       }
+      .container > div > img:hover{
+        width: 40px;
+      }
+       .container > div>a:hover{
+        color:red;
+       }
       .container > div:hover {
-        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-          rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-          rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
-          rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-          rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-          rgba(0, 0, 0, 0.09) 0px 32px 16px;
+       font-size: 15px;
 
         color: red;
 
@@ -296,26 +314,31 @@
        .popular{
        
         display:flex;
+        cursor:pointer;
        }
        .popular>img{
         width:30px;
         height:30px;
         margin-top:50px;
+         cursor:pointer;
+         
        }
        .salon{
         display:flex;
        }
         .salon>img:first-child{
           margin-left:150px;
-        } .salon>img{
+        }
+         .salon>img{
           width:200px;
-          margin-left:20px;
+          margin-left:20px; cursor:pointer;
         }
         .saving{
           display:flex;
         }.saving>img{
           width:400px;
               margin-left:20px;
+              cursor:pointer;
           
         }
         .saving>img:first-child{
@@ -378,7 +401,7 @@
           <a href=""> List your Business |</a>
           <img src="./Screenshot 2023-01-17 230103.png" alt="" />
 
-          <a href="">Login/Sign Up</a>
+          <a href="./signup.html">Login/Sign Up</a>
         </div>
       </div>
       <div id="lower">
@@ -396,7 +419,7 @@
         "
           alt=""
         />
-        <h5>Restaurant Deals</h5>
+       <a href="./restaurant.html">Restaurant Deals</a>
       </div>
       <div>
         <img
@@ -450,6 +473,7 @@
           src="https://img4.nbstatic.in/tr:w-/62d6747fb3c621000b6fb633.png"
           alt=""
         />
+     
         <h5>Health</h5>
       </div>
     </div>
@@ -479,6 +503,7 @@
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
       <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+    
     <h2>Top Brands</h2>
  <div class="topbrands">
   <img src="https://img4.nbstatic.in/tr:w-350/63245c7054f372000b1a0790.jpg
@@ -657,6 +682,5 @@
     slides[slideIndex - 1].style.display = "block";
   }
 //   
-//  
-
+// /
 </script>

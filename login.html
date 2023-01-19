@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>logout in Page</title>
+    <style>
+      .main {
+        display: flex;
+        border: 1px solid black;
+        width: 50%;
+        margin: 100px 100px 100px 350px;
+        height: 500px;
+      }
+      .first {
+        border: 1px solid black;
+        background-color: red;
+        color: white;
+        width: 50%;
+      }
+      .first > img {
+        margin-top: 150px;
+        margin-left: 65px;
+      }
+      .first > p {
+        margin-left: 50px;
+      }
+      .nav {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .nav > a {
+        text-decoration: none;
+        font-size: x-large;
+        margin-top: 10px;
+        margin-left: 70px;
+        color: black;
+      }
+      #form1 > input {
+        margin-top: 50px;
+        display: grid;
+        padding: 20px 40px 20px 40px;
+        margin-left: 70px;
+      }
+      #form1 > input:last-child {
+        margin-left: 130px;
+        background-color: red;
+        color: white;
+        border: none;
+        font-size: large;
+      }
+      hr {
+        margin-left: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="first">
+        <img src="./Screenshot 2023-01-17 221826.png" alt="" />
+        <p>Explore exciting deals & offers around you</p>
+      </div>
+      <div class="second">
+        <div class="nav">
+          <!-- <a href="./login.html">login </a> -->
+          <!-- <a href="./signup.html">Sign up </a> -->
+          <a href="./homepage.html">Homepage </a>
+        </div>
+        <hr />
+        <div id="login">
+          <form id="form1">
+            <input type="email" id="email" placeholder="Enter your email" />
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let formEl = document.querySelector("form");
+
+    let emailEl1 = document.getElementById("email");
+    let passwordEl = document.getElementById("password");
+
+    let lsData = JSON.parse(localStorage.getItem("account-data"));
+    for (let i = 0; i < lsData.length; i++) {
+      formEl.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (
+          emailEl1.value === lsData[i].email &&
+          passwordEl.value === lsData[i].password
+        ) {
+          alert("log in successfuly");
+        } else {
+          alert("Wrong Credentials");
+        }
+      });
+    }
+  </script>
+</html>
