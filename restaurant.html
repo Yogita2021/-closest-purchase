@@ -4,58 +4,334 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Country App</title>
+    <title>closest purchase restaurantpage</title>
     <style>
-      body {
-        background-color: rgb(245, 244, 244);
+      .nav {
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        /* position:sticky;
+          top:0;  */
       }
-      #container {
-        width: 90%;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 15px;
+      #upper {
+        height: 30px;
+        width: 100%;
+        background-color: #f1f1f1;
+        position: sticky;
+        top: 0;
+
+        /* cursor: pointer; */
       }
-      #container > div {
-        background-color: white;
+
+      #upper > div {
+        height: 30px;
+        display: flex;
+        margin-left: 150px;
+        cursor: pointer;
+      }
+      #upper {
+        display: flex;
+        justify-content: space-between;
+      }
+      #upper > div > p {
+        margin-top: 5px;
+        margin-left: 4px;
+        color: grey;
+      }
+      #upper > div > img {
+        height: 20px;
+        margin-top: 5px;
+      }
+      #upper > div > button {
+        border-radius: 20px;
+        margin-left: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-color: grey;
+        cursor: pointer;
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+      #upper > div:nth-child(2) {
+        margin-right: 150px;
+      }
+      #upper > div > a {
+        display: flex;
+        text-decoration: none;
+        margin-left: 7px;
+
+        margin-top: 5px;
+        color: black;
+      }
+      #upper > div > a:first-child {
+        color: red;
+      }
+      #upper > div > a ~ img {
+        margin-left: 5px;
+        height: 15px;
+        width: 15px;
+        margin-top: 7px;
+      }
+
+      #lower {
+        display: flex;
+        position: sticky;
+        top: 30px;
+
+        /* cursor: pointer; */
+      }
+      #lower > img {
+        width: 200px;
+        height: 60px;
+        margin-left: 150px;
+        cursor: pointer;
+      }
+
+      #lower > form > input:first-child {
+        padding: 12px 300px 12px 12px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 450px;
+        border-style: grey;
+      }
+      #lower > form > input:nth-child(2) {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 12px;
+        font-size: medium;
+      }
+      #lower > form > input:nth-child(2):hover {
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .closest {
+        color: grey;
+        text-decoration: none;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      }
+      .closest > a {
+        text-decoration: none;
+        color: grey;
         text-align: center;
+        /* margin-left: 20px; */
       }
-      #container img {
+      .closest > a:first-child {
+        margin-left: 150px;
+      }
+      .sort {
+        display: flex;
+        margin-left: 150px;
+
+        height: 60px;
+        margin-bottom: 10px;
+      }
+      .sort > h3:nth-child(2) {
+        margin-left: 100px;
+      }
+      .sort > div {
+        margin-left: 225px;
+        margin-top: 20px;
+      }
+      .sort > div > button {
+        padding: 2px;
+        margin-left: 3px;
+        color: grey;
+        border-radius: 7px grey;
+      }
+      .sort > div > button:hover {
+        background-color: red;
+        color: white;
+        cursor: pointer;
+      }
+      .display {
+        /* border: 1px solid red; */
+        width: 80%;
+        margin-left: 150px;
+        display: flex;
+      }
+      .left {
+        width: 30%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        height: 432px;
+      }
+      .right {
+        width: 80%;
+        margin-left: 30px;
+        /* border: 2px solid black; */
+      }
+      .right > div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        row-gap: 10px;
+      }
+      .right > div > div {
+        /* border: 1px solid red; */
+        height: 500px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .right > div > div > button {
+        /* border: 1px solid red; */
+        margin-left: 90px;
+        color: white;
+        background-color: red;
+        padding: 7px;
+        border: none;
+      }
+      .right > div > div > button:hover {
+        cursor: pointer;
+      }
+      .right > div > div > img {
         width: 100%;
       }
-      form {
-        margin: auto;
-        margin-bottom: 50px;
-        margin-top: 50px;
-        width: 500px;
+      .left > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        margin-bottom: 15px;
       }
-      form input[type="text"] {
-        width: 70%;
+      .left > div > p {
+        margin-left: 10px;
+        color: grey;
       }
-      form input {
-        font-size: 25px;
+      .left > div > h2 {
+        margin-left: 10px;
+      }
+      #inp {
+        margin-left: 10px;
+        margin-bottom: 15px;
+      }
+      #inp > input {
+        padding: 5px 0px 5px 10px;
+      }
+      #inp > button {
+        padding: 5px;
+      }
+      #inp > button:hover {
+        cursor: pointer;
+      }
+      #inp2 {
+        display: flex;
+      }
+      #inp2 > p {
+        margin-left: 10px;
+        color: grey;
+        margin-top: 2px;
+      }
+      #inp2 > a {
+        text-decoration: none;
+        margin-left: 70px;
+        color: red;
+      }
+      .last > h4 {
+        margin-left: 10px;
+      }
+      .last > h4:hover {
+        color: red;
+        cursor: pointer;
+      }
+      .last > p:first-child {
+        margin-top: 20px;
+        font-size: large;
+      }
+      .last > input {
+        margin-left: 10px;
+        margin-bottom: 30px;
+        padding: 10px;
       }
     </style>
   </head>
   <body>
-    <form>
-      <input placeholder="Search" type="text" id="search" />
-      <input type="submit" value="Search" />
-    </form>
-    <div id="container"></div>
+    <div class="nav">
+      <div id="upper">
+        <div>
+          <img
+            src="data:image/png;base64,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
+          "
+            alt=""
+          />
+          <p>Select Location</p>
+          <button>New Delhi</button>
+        </div>
+        <div>
+          <a href=""> We're hiring </a>
+          <a href=""> | How it Works |</a>
+          <a href=""> List your Business |</a>
+          <img src="./Screenshot 2023-01-17 230103.png" alt="" />
+
+          <a href="./signup.html">Login/Sign Up</a>
+        </div>
+      </div>
+      <div id="lower">
+        <img src="./Screenshot 2023-01-17 221826.png" alt="" />
+        <form>
+          <input
+            type="text"
+            placeholder="Search restaurants,spa,events"
+            id="search"
+          />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+    </div>
+    <div class="closest">
+      <a href="">CLOSEST PURCHASE ></a>
+      <a href="">DEALS IN NEW DELHI ></a>
+      <a href="">ALL RESTAURANT OFFERS IN NEW DELHI</a>
+    </div>
+    <div class="sort">
+      <h3>Promos & Filters</h3>
+      <h3>All Restaurants Offer in New Delhi</h3>
+      <div>
+        <button>Near me</button>
+        <button>Popular</button>
+        <button>What's New</button>
+        <button>Price(High to Low)</button><button>Price(Low to High)</button>
+      </div>
+    </div>
+    <div class="display">
+      <div class="left">
+        <div>
+          <h2>Win Rs 500 instant off code</h2>
+          <p>Valid on all prepaid deals | No minimum purchase</p>
+          <div id="inp">
+            <input type="text" placeholder="NBLUCKY" /> <button>Copy</button>
+          </div>
+          <hr />
+          <div id="inp2">
+            <p>Valid till 02 Feb 2023</p>
+            <a href="">Know more</a>
+          </div>
+        </div>
+        <div class="last">
+          <p>Categories</p>
+          <h4>Restaurent</h4>
+          <hr />
+          <p>Location</p>
+          <input type="text" placeholder="Search for a Location" />
+        </div>
+      </div>
+      <div class="right">
+        <div id="container"></div>
+      </div>
+    </div>
   </body>
   <script>
     const Api =
       "https://63c8d7c2c3e2021b2d4a6d0a.mockapi.io/foodproduct/foodproduct";
-    // DOM Elements
+
     let container = document.getElementById("container");
     let searchForm = document.querySelector("form");
 
-    // name, continent, flag,population
-    // [1,2,3,4,5] -> [1,2,4,5]
     let fetchedData = [];
-    thenFetch();
-    // asyncFetch();
+    // thenFetch();
+    asyncFetch();
 
     searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -63,8 +339,9 @@
 
       let filtered = fetchedData.filter((element) => {
         if (
-          element.name.toUpperCase().includes(searchParams.toUpperCase()) ===
-          true
+          element.foodproductname
+            .toUpperCase()
+            .includes(searchParams.toUpperCase()) === true
         ) {
           return true;
         } else {
@@ -74,37 +351,28 @@
       Display(filtered);
     });
 
-    function thenFetch() {
-      fetch(Api)
-        .then((request) => {
-          return request.json();
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
+    async function asyncFetch() {
+      try {
+        let request = await fetch(Api);
+        let data = await request.json();
+        console.log(data);
+        // fetchedData = data.map(function (element) {
+        //   return {
+        //     img: element.foodproduct,
+        //     name: element.foodproductname,
+        //     disc: element.foodproductdiscription,
 
-    // async function asyncFetch() {
-    //   try {
-    //     let request = await fetch(API);
-    //     let data = await request.json();
-    //     fetchedData = data.map(function (element) {
-    //       return {
-    //         name: element.name.official,
-    //         population: element.population,
-    //         continent: element.continents[0],
-    //         flag: element.flags.png,
-    //       };
-    //     });
-    //     console.log(fetchedData);
-    //     Display(fetchedData);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // }
+        //     price: element.foodproductprice,
+        //   };
+        // });
+        console.log(data);
+        Display(data);
+        // Display(data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    let cartarr = JSON.parse(localStorage.getItem("cart")) || [];
 
     function Display(data) {
       container.innerHTML = "";
@@ -112,20 +380,43 @@
         let card = document.createElement("div");
 
         let img = document.createElement("img");
-        img.setAttribute("src", element.flag);
+        img.setAttribute("src", element.foodproduct);
 
         let name = document.createElement("h2");
-        name.innerText = element.name;
+        name.innerText = "Title:-" + element.foodproductname;
 
-        let population = document.createElement("p");
-        population.textContent = element.population;
+        let disc = document.createElement("p");
+        disc.textContent = "Discription:-" + element.foodproductdiscription;
 
-        let continent = document.createElement("p");
-        continent.innerText = element.continent;
+        let price = document.createElement("h3");
+        price.innerText = "Price:-" + Number(element.foodproductprice);
+        //
+        let add = document.createElement("button");
+        add.innerText = "Add to Cart";
 
-        card.append(img, name, population, continent);
+        add.addEventListener("click", () => {
+          if (checkDuplicate(element)) {
+            alert("product Already in Cart");
+          } else {
+            cartarr.push({ ...element, quantity: 1 });
+            localStorage.setItem("cart", JSON.stringify(cartarr));
+            alert("Product Added To cart");
+          }
+        });
+        // /
+        card.append(img, name, disc, price, add);
         container.append(card);
       });
+    }
+
+    //
+    function checkDuplicate(element) {
+      for (let i = 0; i < cartarr.length; i++) {
+        if (cartarr[i].id === element.id) {
+          return true;
+        }
+      }
+      return false;
     }
   </script>
 </html>
