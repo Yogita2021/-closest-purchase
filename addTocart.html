@@ -4,87 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>closest purchase restaurantpage</title>
-    <script
-      src="https://kit.fontawesome.com/22bfe4a0a3.js"
-      crossorigin="anonymous"
-    ></script>
+    <title>addTocart</title>
     <style>
-      .bottom {
-        display: grid;
-        margin-top: 20px;
-      }
-      .bottom > div {
-        display: flex;
-
-        color: white;
-      }
-      .bottom > div > div:first-child {
-        margin-left: 150px;
-        margin-top: 10px;
-      }
-      .bottom > div > div:nth-child(2) {
-        margin-right: 200px;
-        margin-top: 10px;
-        margin-left: 20px;
-      }
-      .bottom > div > div:nth-child(2) > div {
-        display: flex;
-        width: 100px;
-      }
-      .bottom > div > div:nth-child(2) > div > img {
-        width: 40px;
-      }
-      #bottom-up {
-        background-color: #333333;
-      }
-      #bottom-down {
-        /* border: 1px solid red; */
-        display: flex;
-        background-color: black;
-        color: white;
-      }
-      #bottom-down > div:nth-child(1) {
-        display: flex;
-      }
-      #bottom-down > div > div:nth-child(2) {
-        margin-left: 200px;
-      }
-      #bottom-down > div:nth-child(2) {
-        /* border: 1px solid white; */
-        margin-left: 250px;
-      }
-      #bottom-down > div:nth-child(2) > div > div {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        /* gap:10px; */
-
-        /* margin-top:100px; */
-      }
-      #bottom-down > div:nth-child(2) > div {
-        margin-left: 0px;
-      }
-      #images {
-        width: 300px;
-        height: 100px;
-        gap: 30px;
-        text-align: center;
-      }
-      .offers > button {
-        color: #6677a1;
-        margin-left: 700px;
-        background-color: #c6d4d9;
-        cursor: pointer;
-        padding: 10px 20px 10px 20px;
-        border-radius: 20px;
-        border: none;
-        margin-top: 50px;
-        margin-bottom: 10px;
-      }
-      .offers > button:hover {
-        color: black;
-      }
       .nav {
         width: 100%;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
@@ -204,166 +125,238 @@
       .closest > a:first-child {
         margin-left: 150px;
       }
-      .sort {
+      .upper {
+        /* border: 1px solid red; */
         display: flex;
+        height: 210px;
+        width: 80%;
         margin-left: 150px;
-
-        height: 60px;
-        margin-bottom: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
-      .sort > h3:nth-child(2) {
-        margin-left: 100px;
+      .first {
+        /* border: 1px solid red; */
+        /* margin-left: 150px; */
+        /* height: 250px; */
+        width: 400px;
+        margin-left: 20px;
       }
-      .sort > div {
-        margin-left: 215px;
+      .first > p {
+        color: grey;
+      }
+      .first > a {
+        color: #35a7ff;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      .first > a:hover {
+        text-decoration: underline;
+      }
+      .second {
+        /* border: 1px solid red; */
+        width: 170px;
+        /* margin-left: 140px; */
+      }
+      .second > p {
+        color: grey;
+      }
+      .second > button {
+        margin-left: 75px;
+        color: red;
+      }
+      .second > button:hover {
+        cursor: pointer;
+      }
+      .third {
+        /* border: 1px solid black; */
+        width: 600px;
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .third > div {
+        width: 300px;
+      }
+      .third > div > img {
+        width: 100%;
+        cursor: pointer;
+      }
+      .parent {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 80%;
+        margin-left: 150px;
+        /* height: 500px; */
         margin-top: 20px;
       }
-      .sort > div > button {
-        padding: 2px;
-        margin-left: 3px;
-        color: grey;
-        border-radius: 7px grey;
-      }
-      .sort > div > button:hover {
-        background-color: red;
-        color: white;
-        cursor: pointer;
-      }
-      #sorting {
-        /* border: 1px solid red; */
-        padding: 10px;
-        font-size: large;
-      }
-      #sorting:hover {
-        cursor: pointer;
-        color: white;
-        background-color: red;
-      }
-      .display {
-        /* border: 1px solid red; */
-        width: 80%;
-        margin-left: 150px;
-        display: flex;
-      }
-      .left {
-        width: 30%;
+      .up {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        height: 432px;
+        display: flex;
+        margin-bottom: 10px;
       }
-      .right {
-        width: 80%;
-        margin-left: 30px;
-        /* border: 2px solid black; */
+      .up > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
       }
-      .right > div {
+      .up > div:hover {
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .up > div:first-child {
+        border: none;
+      }
+      /*  */
+      .left {
+        margin-top: 10px;
+        width: 60%;
+        /* margin-left: 30px; */
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .left > div {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
         row-gap: 10px;
       }
-      .right > div > div {
+      .left > div > div {
         /* border: 1px solid red; */
-        height: 550px;
+        height: 520px;
         cursor: pointer;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
-      .right > div > div > button {
-        /* border: 1px solid red; */
-        margin-left: 90px;
+      .left > div > div > button {
+        /* border: 1px solid black; */
+        margin-left: 20px;
+        margin-right: 10px;
         color: white;
         background-color: red;
-        padding: 7px;
+        padding: 3px 5px 3px 5px;
         border: none;
       }
-      .right > div > div > button:hover {
+      /* .right > div > div > button:first-child(2) {
+        padding: 5px 8px 5px 8px;
+      } */
+      .left > div > div > button:hover {
         cursor: pointer;
       }
-      .right > div > div > img {
+      .left > div > div > img {
         width: 100%;
       }
-      .left > div {
+      .right {
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        margin-bottom: 15px;
-        /* border: 1px solid red; */
-      }
-      .left {
-        /* border: 1px solid black; */
-        height: 477px;
+        width: 40%;
+        height: 300px;
+        /* margin-top: 10px; */
+        margin-left: 20px;
         position: sticky;
-        top: 100px;
-        /* z-index: -50; */
+        top: 90px;
+        z-index: -50;
+        margin-right: 20px;
       }
-
-      .left > div > p {
-        margin-left: 10px;
-        color: grey;
-      }
-      .left > div > h2 {
-        margin-left: 10px;
-      }
-      #inp {
-        margin-left: 10px;
-        margin-bottom: 15px;
-      }
-      #inp > input {
-        padding: 5px 0px 5px 10px;
-      }
-      #inp > button {
-        padding: 5px;
-      }
-      #inp > button:hover {
-        cursor: pointer;
-      }
-      #inp2 {
+      .child {
         display: flex;
       }
-      #inp2 > p {
-        margin-left: 10px;
-        color: grey;
-        margin-top: 2px;
+      .right > div:first-child {
+        /* border: 1px solid black; */
+        height: 60px;
+        text-align: center;
+        background-color: #e0e0e0;
       }
-      #inp2 > a {
-        text-decoration: none;
-        margin-left: 70px;
-        color: red;
+      .right p {
+        margin-left: 30px;
+        margin-top: 0px;
       }
-      .last > h4 {
-        margin-left: 10px;
+      .right span {
+        margin-left: 200px;
       }
-      .last > h4:hover {
-        color: red;
-        cursor: pointer;
+      #total {
+        margin-left: 30px;
       }
-      .last > select {
-        margin-top: 20px;
-        font-size: large;
-        padding: 10px;
-        cursor: pointer;
-        margin-left: 50px;
-      }
-      .last > select:hover {
-        cursor: pointer;
+      .right button {
+        margin-top: 30px;
+        margin-left: 120px;
+        padding: 20px 90px 20px 90px;
         background-color: red;
         color: white;
+        border: none;
       }
-      .last > input {
-        margin-left: 10px;
-        margin-bottom: 30px;
-        padding: 10px;
-      }
-      .last {
-        height: 250px;
-        /* border: 1px solid red; */
-      }
-      #icon {
-        margin: 20px;
-      }
-      #icon:hover {
+      .right button:hover {
         cursor: pointer;
-        size: 20px;
+        font-size: 20px;
       }
-      #all {
-        margin-left: 210px;
+
+      .bottom {
+        display: grid;
+        margin-top: 20px;
+      }
+      .bottom > div {
+        display: flex;
+
+        color: white;
+      }
+      .bottom > div > div:first-child {
+        margin-left: 150px;
+        margin-top: 10px;
+      }
+      .bottom > div > div:nth-child(2) {
+        margin-right: 200px;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+      .bottom > div > div:nth-child(2) > div {
+        display: flex;
+        width: 100px;
+      }
+      .bottom > div > div:nth-child(2) > div > img {
+        width: 40px;
+      }
+      #bottom-up {
+        background-color: #333333;
+      }
+      #bottom-down {
+        /* border: 1px solid red; */
+        display: flex;
+        background-color: black;
+        color: white;
+      }
+      #bottom-down > div:nth-child(1) {
+        display: flex;
+      }
+      #bottom-down > div > div:nth-child(2) {
+        margin-left: 200px;
+      }
+      #bottom-down > div:nth-child(2) {
+        /* border: 1px solid white; */
+        margin-left: 250px;
+      }
+      #bottom-down > div:nth-child(2) > div > div {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        /* gap:10px; */
+
+        /* margin-top:100px; */
+      }
+      #bottom-down > div:nth-child(2) > div {
+        margin-left: 0px;
+      }
+      #images {
+        width: 300px;
+        height: 100px;
+        gap: 30px;
+        text-align: center;
+      }
+      .offers > button {
+        color: #6677a1;
+        margin-left: 700px;
+        background-color: #c6d4d9;
+        cursor: pointer;
+        padding: 10px 20px 10px 20px;
+        border-radius: 20px;
+        border: none;
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+      .offers > button:hover {
+        color: black;
       }
     </style>
   </head>
@@ -398,9 +391,6 @@
           />
           <input type="submit" value="Search" />
         </form>
-        <a href="./addTocart.html"
-          ><div id="icon"><i class="fa-solid fa-cart-shopping"></i></div
-        ></a>
       </div>
     </div>
     <div class="closest">
@@ -408,57 +398,58 @@
       <a href="">DEALS IN NEW DELHI ></a>
       <a href="">ALL RESTAURANT OFFERS IN NEW DELHI</a>
     </div>
-    <div class="sort">
-      <h3>Promos & Filters</h3>
-      <h3 id="all">All Restaurants Offer in New Delhi</h3>
-      <div>
-        <button>Near me</button>
-        <button>Popular</button>
-        <button>What's New</button>
-        <!-- <button id="high">Price(High to Low)</button>
-        <button id="low">Price(Low to High)</button> -->
-        <select name="" id="sorting">
-          <option value="">Sort By Price</option>
-          <option value="h2l">High To Low</option>
-          <option value="l2h">Low To High</option>
-        </select>
+    <div class="upper">
+      <div class="first">
+        <p>FINE DINE RESTAURANT</p>
+
+        <h2>Edesia - Crowne Plaza</h2>
+        <a href="">View on map</a>
+      </div>
+      <div class="second">
+        <p>Based on 1155 ratings</p>
+        <button>CP/4.5/5</button>
+      </div>
+      <div class="third">
+        <div>
+          <img
+            src="https://img4.nbstatic.in/tr:w-500/5fb3a3f15cc6f2000bbb4962.jpg
+        "
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://img4.nbstatic.in/tr:w-500/5fb3a3ea5cc6f2000bbb4960.jpg"
+            alt=""
+          />
+        </div>
       </div>
     </div>
-    <div class="display">
-      <div class="left">
-        <div>
-          <h2>Win Rs 500 instant off code</h2>
-          <p>Valid on all prepaid deals | No minimum purchase</p>
-          <div id="inp">
-            <input type="text" placeholder="NBLUCKY" /> <button>Copy</button>
-          </div>
-          <hr />
-          <div id="inp2">
-            <p>Valid till 02 Feb 2023</p>
-            <a href="">Know more</a>
-          </div>
-        </div>
-        <div class="last">
-          <!-- <p>Categories</p> -->
-          <select id="filter">
-            <option value="">Food Category</option>
-            <option value="Incredible">Incredible</option>
-            <option value="Oriental">Oriental</option>
-            <option value="Awesome">Awesome</option>
-            <option value="Elegant">Elegant</option>
-            <!-- <option value="Recycled">Recycled</option> -->
-            <option value="Modern">Modern</option>
-          </select>
-
-          <!--  -->
-          <h4>Restaurent</h4>
-          <hr />
-          <p>Location</p>
-          <input type="text" placeholder="Search for a Location" />
-        </div>
+    <div class="parent">
+      <div class="up">
+        <div>Food Product</div>
+        <div>Photos</div>
+        <div>About</div>
       </div>
-      <div class="right">
-        <div id="container"></div>
+      <!--  -->
+      <div class="child">
+        <div class="left">
+          <div id="container"></div>
+        </div>
+        <div class="right">
+          <div>
+            <h2>Your order</h2>
+          </div>
+          <div>
+            <h2 id="total">Total Price <span id="cart-total">0</span></h2>
+            <p>(Inc. of all taxes)</p>
+          </div>
+          <hr />
+          <button>BUY NOW</button>
+        </div>
+        <!--  -->
+
+        <!--  -->
       </div>
     </div>
     <div class="offers">
@@ -545,145 +536,107 @@
       </div>
     </div>
   </body>
-  <script>
-    const Api =
-      "https://63c8d7c2c3e2021b2d4a6d0a.mockapi.io/foodproduct/foodproduct";
-
-    let container = document.getElementById("container");
-    let searchForm = document.querySelector("form");
-
-    let fetchedData = [];
-
-    asyncFetch();
-    // search functioality///////////
-    searchForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      let searchParams = searchForm.search.value;
-
-      let filtered = fetchedData.filter((element) => {
-        if (
-          element.foodproductname
-            .toUpperCase()
-            .includes(searchParams.toUpperCase()) === true
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      });
-      Display(filtered);
-    });
-
-    async function asyncFetch() {
-      try {
-        let request = await fetch(Api);
-        let data = await request.json();
-        console.log(data);
-        fetchedData = data;
-
-        console.log(data);
-        FilterData(fetchedData);
-        // Display(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    let cartarr = JSON.parse(localStorage.getItem("cart")) || [];
-
-    function Display(data) {
-      container.innerHTML = "";
-      data.forEach((element) => {
-        let card = document.createElement("div");
-
-        let img = document.createElement("img");
-        img.setAttribute("src", element.foodproduct);
-
-        let name = document.createElement("h2");
-        name.innerText = "Title:-" + element.foodproductname;
-
-        let disc = document.createElement("p");
-        disc.textContent = "Discription:-" + element.foodproductdiscription;
-
-        let price = document.createElement("h3");
-        price.innerText = `₹ ${element.foodproductprice}`;
-        // price.innerText = "Price:-" + Number(element.foodproductprice);
-        let category = document.createElement("h3");
-        category.textContent = "category:-" + element.foodproductcategory;
-        //
-        let add = document.createElement("button");
-        add.innerText = "Add to Cart";
-
-        add.addEventListener("click", () => {
-          if (checkDuplicate(element)) {
-            alert("product Already in Cart");
-            window.location.href = "./addTocart.html";
-          } else {
-            cartarr.push({ ...element, quantity: 1 });
-            localStorage.setItem("cart", JSON.stringify(cartarr));
-            alert("Product Added To cart");
-            window.location.href = "./addTocart.html";
-          }
-        });
-        // /
-        card.append(img, name, disc, price, category, add);
-        container.append(card);
-      });
-    }
-
-    //
-    function checkDuplicate(element) {
-      for (let i = 0; i < cartarr.length; i++) {
-        if (cartarr[i].id === element.id) {
-          return true;
-        }
-      }
-      return false;
-    }
-    // filter by category////////
-
-    let filterBy = document.getElementById("filter");
-    filterBy.addEventListener("change", () => {
-      asyncFetch();
-    });
-    function FilterData(fetchedData) {
-      let filterValue = filterBy.value;
-      if (filterValue === "") {
-        Display(fetchedData);
-        console.log(fetchedData);
-      } else {
-        fetchedData = fetchedData.filter((element) => {
-          return element.foodproductcategory == filterValue;
-        });
-        Display(fetchedData);
-        console.log(fetchedData);
-      }
-    }
-    // sorting
-    let filterEl = document.getElementById("sorting");
-    filterEl.addEventListener("change", () => {
-      console.log(filterEl.value);
-      if (filterEl.value == "") {
-        let filtered = fetchedData.sort((a, b) => {
-          if (a.id > b.id) {
-            return 1;
-          }
-          if (a.id < b.id) {
-            return -1;
-          }
-          return 0;
-        });
-        Display(filtered);
-      } else if (filterEl.value == "l2h") {
-        let filtered = fetchedData.sort((a, b) => {
-          return a.price - b.price;
-        });
-        Display(filtered);
-      } else if (filterEl.value == "h2l") {
-        let filtered = fetchedData.sort((a, b) => {
-          return b.price - a.price;
-        });
-        Display(filtered);
-      }
-    });
-  </script>
 </html>
+<script>
+  let Cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let container = document.getElementById("container");
+  let total = document.getElementById("cart-total");
+  let searchForm = document.querySelector("form");
+
+  //for searching///
+
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let searchParams = searchForm.search.value;
+
+    let filtered = Cart.filter((element) => {
+      if (
+        element.foodproductname
+          .toUpperCase()
+          .includes(searchParams.toUpperCase()) === true
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    Display(filtered);
+  });
+
+  //
+
+  Display();
+  function Display(cart) {
+    container.innerHTML = "";
+    Cart.forEach((element) => {
+      let card = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.setAttribute("src", element.foodproduct);
+
+      let name = document.createElement("h2");
+      name.innerText = "Title:-" + element.foodproductname;
+
+      let disc = document.createElement("p");
+      disc.textContent = "Discription:-" + element.foodproductdiscription;
+
+      let price = document.createElement("h3");
+      // price.innerText = element.foodproductprice;
+      price.innerText = `₹  ${element.foodproductprice}`;
+      // price.innerText = "Price:-" + Number(element.foodproductprice);
+      let category = document.createElement("h3");
+      category.textContent = "category:-" + element.foodproductcategory;
+      //
+      let quantity = document.createElement("span");
+      let remove = document.createElement("button");
+      let Increment = document.createElement("button");
+      let decrement = document.createElement("button");
+      quantity.innerText = element.quantity;
+      remove.innerText = "Remove";
+      Increment.innerText = "+";
+      decrement.innerText = "-";
+      remove.addEventListener("click", () => {
+        Cart = Cart.filter((ele) => {
+          return ele.id !== element.id;
+        });
+        localStorage.setItem("cart", JSON.stringify(Cart));
+        Display();
+      });
+
+      Increment.addEventListener("click", () => {
+        element = element.quantity++;
+        localStorage.setItem("cart", JSON.stringify(Cart));
+        Display();
+      });
+      decrement.addEventListener("click", () => {
+        if (element.quantity > 1) {
+          element = element.quantity--;
+          localStorage.setItem("cart", JSON.stringify(Cart));
+          Display();
+        }
+      });
+
+      // /
+      card.append(
+        img,
+        name,
+        disc,
+        price,
+        category,
+        Increment,
+        quantity,
+        decrement,
+        remove
+      );
+      container.append(card);
+    });
+    // //////
+    let sum = 0;
+    for (let i = 0; i < Cart.length; i++) {
+      sum += Cart[i].Number(price) * Cart[i].Number(quantity);
+      console.log(sum);
+    }
+    total.innerText = sum;
+  }
+</script>
