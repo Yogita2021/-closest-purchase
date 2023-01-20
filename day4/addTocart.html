@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addTocart</title>
+    <style>
+      .nav {
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+        position: sticky;
+        top: 0;
+      }
+      #upper {
+        height: 30px;
+        width: 100%;
+        background-color: #f1f1f1;
+        position: sticky;
+        top: 0;
+
+        /* cursor: pointer; */
+      }
+
+      #upper > div {
+        height: 30px;
+        display: flex;
+        margin-left: 150px;
+        cursor: pointer;
+      }
+      #upper {
+        display: flex;
+        justify-content: space-between;
+      }
+      #upper > div > p {
+        margin-top: 5px;
+        margin-left: 4px;
+        color: grey;
+      }
+      #upper > div > img {
+        height: 20px;
+        margin-top: 5px;
+      }
+      #upper > div > button {
+        border-radius: 20px;
+        margin-left: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-color: grey;
+        cursor: pointer;
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+      #upper > div:nth-child(2) {
+        margin-right: 150px;
+      }
+      #upper > div > a {
+        display: flex;
+        text-decoration: none;
+        margin-left: 7px;
+
+        margin-top: 5px;
+        color: black;
+      }
+      #upper > div > a:first-child {
+        color: red;
+      }
+      #upper > div > a ~ img {
+        margin-left: 5px;
+        height: 15px;
+        width: 15px;
+        margin-top: 7px;
+      }
+
+      #lower {
+        display: flex;
+        position: sticky;
+        top: 30px;
+        background-color: white;
+        /* cursor: pointer; */
+      }
+      #lower > img {
+        width: 200px;
+        height: 60px;
+        margin-left: 150px;
+        cursor: pointer;
+      }
+
+      #lower > form > input:first-child {
+        padding: 12px 300px 12px 12px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 450px;
+        border-style: grey;
+      }
+      #lower > form > input:nth-child(2) {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        background-color: red;
+        border: none;
+        color: white;
+        padding: 12px;
+        font-size: medium;
+      }
+      #lower > form > input:nth-child(2):hover {
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .closest {
+        color: grey;
+        text-decoration: none;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+      }
+      .closest > a {
+        text-decoration: none;
+        color: grey;
+        text-align: center;
+        /* margin-left: 20px; */
+      }
+      .closest > a:first-child {
+        margin-left: 150px;
+      }
+      .upper {
+        /* border: 1px solid red; */
+        display: flex;
+        height: 210px;
+        width: 80%;
+        margin-left: 150px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .first {
+        /* border: 1px solid red; */
+        /* margin-left: 150px; */
+        /* height: 250px; */
+        width: 400px;
+        margin-left: 20px;
+      }
+      .first > p {
+        color: grey;
+      }
+      .first > a {
+        color: #35a7ff;
+        text-decoration: none;
+        margin-left: 20px;
+      }
+      .first > a:hover {
+        text-decoration: underline;
+      }
+      .second {
+        /* border: 1px solid red; */
+        width: 170px;
+        /* margin-left: 140px; */
+      }
+      .second > p {
+        color: grey;
+      }
+      .second > button {
+        margin-left: 75px;
+        color: red;
+      }
+      .second > button:hover {
+        cursor: pointer;
+      }
+      .third {
+        /* border: 1px solid black; */
+        width: 600px;
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .third > div {
+        width: 300px;
+      }
+      .third > div > img {
+        width: 100%;
+        cursor: pointer;
+      }
+      .parent {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 80%;
+        margin-left: 150px;
+        /* height: 500px; */
+        margin-top: 20px;
+      }
+      .up {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        margin-bottom: 10px;
+      }
+      .up > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
+      }
+      .up > div:hover {
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .up > div:first-child {
+        border: none;
+      }
+      /*  */
+      .left {
+        margin-top: 10px;
+        width: 60%;
+        /* margin-left: 30px; */
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .left > div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        row-gap: 10px;
+      }
+      .left > div > div {
+        /* border: 1px solid red; */
+        height: 520px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .left > div > div > button {
+        /* border: 1px solid black; */
+        margin-left: 20px;
+        margin-right: 10px;
+        color: white;
+        background-color: red;
+        padding: 3px 5px 3px 5px;
+        border: none;
+      }
+      /* .right > div > div > button:first-child(2) {
+        padding: 5px 8px 5px 8px;
+      } */
+      .left > div > div > button:hover {
+        cursor: pointer;
+      }
+      .left > div > div > img {
+        width: 100%;
+      }
+      .right {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 40%;
+        height: 300px;
+        /* margin-top: 10px; */
+        margin-left: 20px;
+        position: sticky;
+        top: 90px;
+        z-index: -50;
+        margin-right: 20px;
+      }
+      .child {
+        display: flex;
+      }
+      .right > div:first-child {
+        /* border: 1px solid black; */
+        height: 60px;
+        text-align: center;
+        background-color: #e0e0e0;
+      }
+      .right p {
+        margin-left: 30px;
+        margin-top: 0px;
+      }
+      .right span {
+        margin-left: 200px;
+      }
+      #total {
+        margin-left: 30px;
+      }
+      .right button {
+        margin-top: 30px;
+        margin-left: 120px;
+        padding: 20px 90px 20px 90px;
+        background-color: red;
+        color: white;
+        border: none;
+      }
+      .right button:hover {
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      .bottom {
+        display: grid;
+        margin-top: 20px;
+      }
+      .bottom > div {
+        display: flex;
+
+        color: white;
+      }
+      .bottom > div > div:first-child {
+        margin-left: 150px;
+        margin-top: 10px;
+      }
+      .bottom > div > div:nth-child(2) {
+        margin-right: 200px;
+        margin-top: 10px;
+        margin-left: 20px;
+      }
+      .bottom > div > div:nth-child(2) > div {
+        display: flex;
+        width: 100px;
+      }
+      .bottom > div > div:nth-child(2) > div > img {
+        width: 40px;
+      }
+      #bottom-up {
+        background-color: #333333;
+      }
+      #bottom-down {
+        /* border: 1px solid red; */
+        display: flex;
+        background-color: black;
+        color: white;
+      }
+      #bottom-down > div:nth-child(1) {
+        display: flex;
+      }
+      #bottom-down > div > div:nth-child(2) {
+        margin-left: 200px;
+      }
+      #bottom-down > div:nth-child(2) {
+        /* border: 1px solid white; */
+        margin-left: 250px;
+      }
+      #bottom-down > div:nth-child(2) > div > div {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        /* gap:10px; */
+
+        /* margin-top:100px; */
+      }
+      #bottom-down > div:nth-child(2) > div {
+        margin-left: 0px;
+      }
+      #images {
+        width: 300px;
+        height: 100px;
+        gap: 30px;
+        text-align: center;
+      }
+      .offers > button {
+        color: #6677a1;
+        margin-left: 700px;
+        background-color: #c6d4d9;
+        cursor: pointer;
+        padding: 10px 20px 10px 20px;
+        border-radius: 20px;
+        border: none;
+        margin-top: 50px;
+        margin-bottom: 10px;
+      }
+      .offers > button:hover {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div id="upper">
+        <div>
+          <img
+            src="data:image/png;base64,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
+          "
+            alt=""
+          />
+          <p>Select Location</p>
+          <button>New Delhi</button>
+        </div>
+        <div>
+          <a href=""> We're hiring </a>
+          <a href=""> | How it Works |</a>
+          <a href=""> List your Business |</a>
+          <img src="./Screenshot 2023-01-17 230103.png" alt="" />
+
+          <a href="./signup.html">Login/Sign Up</a>
+        </div>
+      </div>
+      <div id="lower">
+        <img src="./Screenshot 2023-01-17 221826.png" alt="" />
+        <form>
+          <input
+            type="text"
+            placeholder="Search restaurants,spa,events"
+            id="search"
+          />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
+    </div>
+    <div class="closest">
+      <a href="">CLOSEST PURCHASE ></a>
+      <a href="">DEALS IN NEW DELHI ></a>
+      <a href="">ALL RESTAURANT OFFERS IN NEW DELHI</a>
+    </div>
+    <div class="upper">
+      <div class="first">
+        <p>FINE DINE RESTAURANT</p>
+
+        <h2>Edesia - Crowne Plaza</h2>
+        <a href="">View on map</a>
+      </div>
+      <div class="second">
+        <p>Based on 1155 ratings</p>
+        <button>CP/4.5/5</button>
+      </div>
+      <div class="third">
+        <div>
+          <img
+            src="https://img4.nbstatic.in/tr:w-500/5fb3a3f15cc6f2000bbb4962.jpg
+        "
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="https://img4.nbstatic.in/tr:w-500/5fb3a3ea5cc6f2000bbb4960.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="up">
+        <div>Food Product</div>
+        <div>Photos</div>
+        <div>About</div>
+      </div>
+      <!--  -->
+      <div class="child">
+        <div class="left">
+          <div id="container"></div>
+        </div>
+        <div class="right">
+          <div>
+            <h2>Your order</h2>
+          </div>
+          <div>
+            <h2 id="total">Total Price <span id="cart-total">0</span></h2>
+            <p>(Inc. of all taxes)</p>
+          </div>
+          <hr />
+          <button>BUY NOW</button>
+        </div>
+        <!--  -->
+
+        <!--  -->
+      </div>
+    </div>
+    <div class="offers">
+      <button>VIEW ALL OFFERS</button>
+    </div>
+    <div class="bottom">
+      <div id="bottom-up">
+        <div>
+          <h5>Amazing offers available on ClosestPurchase</h5>
+          <p>
+            ClosestPurchase helps you discover the best things to do, eat and
+            buy – wherever you are! Make every day awesome with nearbuy. Dine at
+            the finest restaurants, relax at the best spas, pamper yourself with
+            exciting wellness and shopping offers or just explore your city
+            intimately… you will always find a lot more to do with nearbuy. From
+            tattoo parlors to music concerts, movie tickets to theme parks,
+            everything you want is now within reach. Don't stop yet! Take it
+            wherever you go with the nearbuy mobile app. Based on your location
+            and preference, our smart search engine will suggest new things to
+            explore every time you open the app. What's more, with offers on
+            everything around you... you are sure to try something new every
+            time.
+          </p>
+        </div>
+        <div>
+          <h3>Follow Us</h3>
+          <div>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVNK1-cfQ8QVqZK95YhFn_ngO5Z2juWc-worzpSfoX&s
+            "
+              alt=""
+            />
+            <img
+              src="data:image/png;base64,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
+            "
+              alt=""
+            />
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAAB6CAMAAABHh7fWAAAAP1BMVEX///+bm5uXl5eUlJTj4+P29va9vb2np6fg4ODy8vKRkZH7+/vs7OzW1tbNzc3d3d2hoaG1tbXGxsavr6+IiIiYvRZMAAAFCklEQVRoge2b2QKkKAxFC1BUREWd///WcUFLJGETu/uh7lMvlsfEEELAz+enn376Z1TKuusnzseR86nvaln+GWo3KkKoIULU2Bev8psFS9lCsrX8s5p7+Q637GYEe4qxuW+ygyUnzIk96HSss4LrSrjtvUqoLht4UCKYu5tO8sBlFeRpU1Q9d3vJwz1twseHATeoBJM1+5HX2ykZvIqNyVmmSTf5MLxIIw+RcQ0a3qeQ+wzk1enxZP7Q2Yfo3P4l8sqOC7YxGzmWnc/mnR3u87zklR1KzhPbBjswzuvMNq8KG99NfvDKDshr7Zw4VfnkD/NnMwYu/+suXrJ5cblvDlVvkRe5a4cJNpoxGiP4nbldXoI/YnPXlDGq4TxMXfXaCBlNE+bcAbS7wn8goTSWNtsPkN0Uj7QRelSVQkbuRbCrJfikwUY3wyYdx2A6RgcY+KZZaC3fCbZr2P5agmMFcWEDXhySfDdVh5sqB1rAhsBjOhh9JiMXmoBju4UTWWY0hVIaMk1nRoNDFQyy7GgC1EotfGV2NLP7LTV2aWyE+9C2x5E5Kxzd6WFNXeOaQB6vkCuD0R+5pLJ6qLVDUbS6V0rwdBmFvt0QQ9P7DdEK2IGWRY336FC09bJ79EoEPcxiSdpCVMiMgFt9T2jIqMbQl7YSg5tFKNqaQtByEER3xn3ZFIW+V+ToMgtCD7fbQmwH2gyQMgbdWCEJTOo4+lYdglXZFS3r4oxnIC70+2vWqwof2gxMfHWp0eMazh36mLryaf5brlI+tDm6Oh9661fK7x/v0nUuI74cvqDNyOhD0GrrS7RgyhX7faoQNDfR6IUXtL4neJmQZxi8gd7nHDu+4SfE0WMy2lU9voV2OrxJdnh4mH1mEJ0cZjGDC6pnDieKELQ5uIoQ9JE3gGt1JpVBaDOleBPpij6afnZO0Yud3SFetJlI2xA0oft019pond23qdeLvs01YWj9lu6r4WPtuu8b+NC3SRMtSA00EbrFK+nlxlQva4+beNG3UgHdzjLQZzZo+bGzSsW5r6O7fT70vaPiKwv1o33bAs00L/aSip/uO7p9HvRtWDtGl4k2quiyacpvk10e5Z0HbTU17KiF0QTbupKBy71zNHzlWfh80XAHqvj+woO2Fj6+5d4lDNlob2Vc+8luNNCuxFrCNnoJ6sl48ra/jjXfIhdwGrIIANDrAY25k3u5JIeRmBSPw4FmCjKyQfSaR4hSVVUpYh2diG5oYB5H0A652zhgkMIxnhkNb4HAlYpGdyK0Dy8mB9pKZbvgoutYcw08UNqjSKMS6QWATj2npUjBNTO2wwiWuRRaPAcIrPaQ7uwHi6XYre9dYN2K70A0UK2CRIZHYMy6Xh78tnm83fCM4Nh2+bTwJhGZhiJCdQ+fKrGny6uQpQBlUUISmSdg39rHJdBEbUq+Rvbv3+Crr4fkgPyA9g2fqQoYJuUr+8gi6PQZuMn3lBy4UVdkPxwSviWbO9RYRC7G+xtvk/Oe04g9cpbP7jibV3WZYk0kzLl4ZydGaccNpHqc15KPVJZPz9qxOf0EbUeeGE6ntLJul5zTD+6qRGd/DfechMfAIZOkVzziWPohkX5c2FDDaRScijHf9whN4JcAG5jyvB9ClH0VYjplanrhC4yCKzd9+V9ePBlPTvpUUQbx6frJyVS/xd3VFj2v2Lp3vZ28Y+setlBj/zL28gCy6Lp+1Z/6uOinn9L0P2qGPTiFdLLiAAAAAElFTkSuQmCC
+            "
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div id="bottom-down">
+        <div>
+          <div>
+            <h3>Company</h3>
+            <h4>About Us</h4>
+            <h4>Blog</h4>
+            <h4>Policy</h4>
+            <h4>Universal Fine Print</h4>
+          </div>
+          <div>
+            <h3>Help</h3>
+            <h4>Contact Us</h4>
+            <h4>Sitemap</h4>
+          </div>
+        </div>
+
+        <div>
+          <h3>Download app</h3>
+          <div id="images">
+            <div>
+              <img
+                src="https://res4.nbstatic.in/static/images/google-play-badges.svg
+            "
+                alt=""
+              />
+              <p>Google Play</p>
+            </div>
+            <div>
+              <img
+                src="https://res4.nbstatic.in/static/images/app-store.svg
+              "
+                alt=""
+              />
+              <p>App Store</p>
+            </div>
+          </div>
+          <p>Customer Care: +91-8605268227 - 11 AM to 8 PM (MON - SUN)</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let Cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let container = document.getElementById("container");
+  let total = document.getElementById("cart-total");
+  let searchForm = document.querySelector("form");
+
+  //for searching///
+
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let searchParams = searchForm.search.value;
+
+    let filtered = Cart.filter((element) => {
+      if (
+        element.foodproductname
+          .toUpperCase()
+          .includes(searchParams.toUpperCase()) === true
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    Display(filtered);
+  });
+
+  //
+
+  Display();
+  function Display(cart) {
+    container.innerHTML = "";
+    Cart.forEach((element) => {
+      let card = document.createElement("div");
+
+      let img = document.createElement("img");
+      img.setAttribute("src", element.foodproduct);
+
+      let name = document.createElement("h2");
+      name.innerText = "Title:-" + element.foodproductname;
+
+      let disc = document.createElement("p");
+      disc.textContent = "Discription:-" + element.foodproductdiscription;
+
+      let price = document.createElement("h3");
+      // price.innerText = element.foodproductprice;
+      price.innerText = `₹  ${element.foodproductprice}`;
+      // price.innerText = "Price:-" + Number(element.foodproductprice);
+      let category = document.createElement("h3");
+      category.textContent = "category:-" + element.foodproductcategory;
+      //
+      let quantity = document.createElement("span");
+      let remove = document.createElement("button");
+      let Increment = document.createElement("button");
+      let decrement = document.createElement("button");
+      quantity.innerText = element.quantity;
+      remove.innerText = "Remove";
+      Increment.innerText = "+";
+      decrement.innerText = "-";
+      remove.addEventListener("click", () => {
+        Cart = Cart.filter((ele) => {
+          return ele.id !== element.id;
+        });
+        localStorage.setItem("cart", JSON.stringify(Cart));
+        Display();
+      });
+
+      Increment.addEventListener("click", () => {
+        element = element.quantity++;
+        localStorage.setItem("cart", JSON.stringify(Cart));
+        Display();
+      });
+      decrement.addEventListener("click", () => {
+        if (element.quantity > 1) {
+          element = element.quantity--;
+          localStorage.setItem("cart", JSON.stringify(Cart));
+          Display();
+        }
+      });
+
+      // /
+      card.append(
+        img,
+        name,
+        disc,
+        price,
+        category,
+        Increment,
+        quantity,
+        decrement,
+        remove
+      );
+      container.append(card);
+    });
+    // //////
+    let sum = 0;
+    for (let i = 0; i < Cart.length; i++) {
+      sum += Cart[i].Number(price) * Cart[i].Number(quantity);
+      console.log(sum);
+    }
+    total.innerText = sum;
+  }
+</script>
