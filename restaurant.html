@@ -404,7 +404,7 @@
       </div>
     </div>
     <div class="closest">
-      <a href="">CLOSEST PURCHASE ></a>
+      <a href="./homepage.html">CLOSEST PURCHASE ></a>
       <a href="">DEALS IN NEW DELHI ></a>
       <a href="">ALL RESTAURANT OFFERS IN NEW DELHI</a>
     </div>
@@ -415,12 +415,11 @@
         <button>Near me</button>
         <button>Popular</button>
         <button>What's New</button>
-        <!-- <button id="high">Price(High to Low)</button>
-        <button id="low">Price(Low to High)</button> -->
-        <select name="" id="sorting">
+
+        <select id="sorting">
           <option value="">Sort By Price</option>
-          <option value="h2l">High To Low</option>
           <option value="l2h">Low To High</option>
+          <option value="h2l">High To Low</option>
         </select>
       </div>
     </div>
@@ -605,8 +604,8 @@
         disc.textContent = "Discription:-" + element.foodproductdiscription;
 
         let price = document.createElement("h3");
-        price.innerText = `₹ ${element.foodproductprice}`;
-        // price.innerText = "Price:-" + Number(element.foodproductprice);
+        // price.innerText = element.foodproductprice;
+        price.innerText = "Price:-" + Number(element.foodproductprice);
         let category = document.createElement("h3");
         category.textContent = "category:-" + element.foodproductcategory;
         //
@@ -616,7 +615,7 @@
         add.addEventListener("click", () => {
           if (checkDuplicate(element)) {
             alert("product Already in Cart");
-            window.location.href = "./addTocart.html";
+            // window.location.href = "./addTocart.html";
           } else {
             cartarr.push({ ...element, quantity: 1 });
             localStorage.setItem("cart", JSON.stringify(cartarr));
@@ -675,15 +674,16 @@
         Display(filtered);
       } else if (filterEl.value == "l2h") {
         let filtered = fetchedData.sort((a, b) => {
-          return a.price - b.price;
+          return a.foodproductprice - b.foodproductprice;
         });
         Display(filtered);
       } else if (filterEl.value == "h2l") {
         let filtered = fetchedData.sort((a, b) => {
-          return b.price - a.price;
+          return b.foodproductprice - a.foodproductprice;
         });
         Display(filtered);
       }
     });
+    // ////////////////////////////////////////////////////////////
   </script>
 </html>
