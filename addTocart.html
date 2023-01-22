@@ -6,358 +6,421 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClosestPurchase AddTocart</title>
     <style>
-      .nav {
-        width: 100%;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-        position: sticky;
-        top: 0;
+        #bottom-down>div:hover{
+       text-decoration: underline;
+       cursor: pointer;
       }
-      #upper {
-        height: 30px;
-        width: 100%;
-        background-color: #f1f1f1;
-        position: sticky;
-        top: 0;
+          .nav {
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+              rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+            position: sticky;
+            top: 0;
+          }
+          #upper {
+            height: 30px;
+            width: 100%;
+            background-color: #f1f1f1;
+            position: sticky;
+            top: 0;
 
-        /* cursor: pointer; */
-      }
+            /* cursor: pointer; */
+          }
 
-      #upper > div {
-        height: 30px;
-        display: flex;
-        margin-left: 150px;
-        cursor: pointer;
-      }
-      #upper {
-        display: flex;
-        justify-content: space-between;
-      }
-      #upper > div > p {
-        margin-top: 5px;
-        margin-left: 4px;
-        color: grey;
-      }
-      #upper > div > img {
-        height: 20px;
-        margin-top: 5px;
-      }
-      #upper > div > button {
-        border-radius: 20px;
-        margin-left: 10px;
-        padding-left: 30px;
-        padding-right: 30px;
-        border-color: grey;
-        cursor: pointer;
-        margin-top: 2px;
-        margin-bottom: 2px;
-      }
-      #upper > div:nth-child(2) {
-        margin-right: 150px;
-      }
-      #upper > div > a {
-        display: flex;
-        text-decoration: none;
-        margin-left: 7px;
+          #upper > div {
+            height: 30px;
+            display: flex;
+            margin-left: 150px;
+            cursor: pointer;
+          }
+          #upper {
+            display: flex;
+            justify-content: space-between;
+          }
+          #upper > div > p {
+            margin-top: 5px;
+            margin-left: 4px;
+            color: grey;
+          }
+          #upper > div > img {
+            height: 20px;
+            margin-top: 5px;
+          }
+          #upper > div > button {
+            border-radius: 20px;
+            margin-left: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-color: grey;
+            cursor: pointer;
+            margin-top: 2px;
+            margin-bottom: 2px;
+          }
+          #upper > div:nth-child(2) {
+            margin-right: 150px;
+          }
+          #upper > div > a {
+            display: flex;
+            text-decoration: none;
+            margin-left: 7px;
 
-        margin-top: 5px;
-        color: black;
-      }
-      #upper > div > a:first-child {
-        color: red;
-      }
-      #upper > div > a ~ img {
-        margin-left: 5px;
-        height: 15px;
-        width: 15px;
-        margin-top: 7px;
-      }
+            margin-top: 5px;
+            color: black;
+          }
+          #upper > div > a:first-child {
+            color: red;
+          }
+          #upper > div > a ~ img {
+            margin-left: 5px;
+            height: 15px;
+            width: 15px;
+            margin-top: 7px;
+          }
 
-      #lower {
-        display: flex;
-        position: sticky;
-        top: 30px;
-        background-color: white;
-        /* cursor: pointer; */
-      }
-      #lower > img {
-        width: 200px;
-        height: 60px;
-        margin-left: 150px;
-        cursor: pointer;
-      }
+          #lower {
+            display: flex;
+            position: sticky;
+            top: 30px;
+            background-color: white;
+            /* cursor: pointer; */
+          }
+          #lower > img {
+            width: 200px;
+            height: 60px;
+            margin-left: 150px;
+            cursor: pointer;
+          }
 
-      #lower > form > input:first-child {
-        padding: 12px 300px 12px 12px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        margin-left: 450px;
-        border-style: grey;
-      }
-      #lower > form > input:nth-child(2) {
-        margin-bottom: 5px;
-        margin-top: 5px;
-        background-color: red;
-        border: none;
-        color: white;
-        padding: 12px;
-        font-size: medium;
-      }
-      #lower > form > input:nth-child(2):hover {
-        font-size: 18px;
-        cursor: pointer;
-      }
-      .closest {
-        color: grey;
-        text-decoration: none;
-        height: 40px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-          rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-      }
-      .closest > a {
-        text-decoration: none;
-        color: grey;
-        text-align: center;
-        /* margin-left: 20px; */
-      }
-      .closest > a:first-child {
-        margin-left: 150px;
-      }
-      .upper {
-        /* border: 1px solid red; */
-        display: flex;
-        height: 210px;
-        width: 80%;
-        margin-left: 150px;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      }
-      .first {
-        /* border: 1px solid red; */
-        /* margin-left: 150px; */
-        /* height: 250px; */
-        width: 400px;
-        margin-left: 20px;
-      }
-      .first > p {
-        color: grey;
-      }
-      .first > a {
-        color: #35a7ff;
-        text-decoration: none;
-        margin-left: 20px;
-      }
-      .first > a:hover {
-        text-decoration: underline;
-      }
-      .second {
-        /* border: 1px solid red; */
-        width: 170px;
-        /* margin-left: 140px; */
-      }
-      .second > p {
-        color: grey;
-      }
-      .second > button {
-        margin-left: 75px;
-        color: red;
-      }
-      .second > button:hover {
-        cursor: pointer;
-      }
-      .third {
-        /* border: 1px solid black; */
-        width: 600px;
-        display: flex;
-        gap: 15px;
-        margin-top: 15px;
-      }
-      .third > div {
-        width: 300px;
-      }
-      .third > div > img {
-        width: 100%;
-        cursor: pointer;
-      }
-      .parent {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        width: 80%;
-        margin-left: 150px;
-        /* height: 500px; */
-        margin-top: 20px;
-      }
-      .up {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        display: flex;
-        margin-bottom: 10px;
-      }
-      .up > div {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        padding: 20px;
-      }
-      .up > div:hover {
-        font-size: 20px;
-        cursor: pointer;
-      }
-      .up > div:first-child {
-        border: none;
-      }
-      /*  */
-      .left {
-        margin-top: 10px;
-        width: 60%;
-        /* margin-left: 30px; */
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      }
-      .left > div {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        row-gap: 10px;
-      }
-      .left > div > div {
-        /* border: 1px solid red; */
-        height: 520px;
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      }
-      .left > div > div > button {
-        /* border: 1px solid black; */
-        margin-left: 20px;
-        margin-right: 10px;
-        color: white;
-        background-color: red;
-        padding: 3px 5px 3px 5px;
-        border: none;
-      }
-      /* .right > div > div > button:first-child(2) {
-        padding: 5px 8px 5px 8px;
-      } */
-      .left > div > div > button:hover {
-        cursor: pointer;
-      }
-      .left > div > div > img {
-        width: 100%;
-      }
-      .right {
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        width: 40%;
-        height: 300px;
-        /* margin-top: 10px; */
-        margin-left: 20px;
-        position: sticky;
-        top: 90px;
-        z-index: -50;
-        margin-right: 20px;
-      }
-      .child {
-        display: flex;
-      }
-      .right > div:first-child {
-        /* border: 1px solid black; */
-        height: 60px;
-        text-align: center;
-        background-color: #e0e0e0;
-      }
-      .right p {
-        margin-left: 30px;
-        margin-top: 0px;
-      }
-      .right span {
-        margin-left: 200px;
-      }
-      #total {
-        margin-left: 30px;
-      }
-      .right button {
-        margin-top: 30px;
-        margin-left: 120px;
-        padding: 20px 90px 20px 90px;
-        background-color: red;
-        color: white;
-        border: none;
-      }
-      .right button:hover {
-        cursor: pointer;
-        font-size: 20px;
-      }
+          #lower > form > input:first-child {
+            padding: 12px 300px 12px 12px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 450px;
+            border-style: grey;
+          }
+          #lower > form > input:nth-child(2) {
+            margin-bottom: 5px;
+            margin-top: 5px;
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 12px;
+            font-size: medium;
+          }
+          #lower > form > input:nth-child(2):hover {
+            font-size: 18px;
+            cursor: pointer;
+          }
+          .closest {
+            color: grey;
+            text-decoration: none;
+            height: 40px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+              rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          }
+          .closest > a {
+            text-decoration: none;
+            color: grey;
+            text-align: center;
+            /* margin-left: 20px; */
+          }
+          .closest > a:first-child {
+            margin-left: 150px;
+          }
+          .upper {
+            /* border: 1px solid red; */
+            display: flex;
+            height: 210px;
+            width: 80%;
+            margin-left: 150px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+          .first {
+            /* border: 1px solid red; */
+            /* margin-left: 150px; */
+            /* height: 250px; */
+            width: 400px;
+            margin-left: 20px;
+          }
+          .first > p {
+            color: grey;
+          }
+          .first > a {
+            color: #35a7ff;
+            text-decoration: none;
+            margin-left: 20px;
+          }
+          .first > a:hover {
+            text-decoration: underline;
+          }
+          .second {
+            /* border: 1px solid red; */
+            width: 170px;
+            /* margin-left: 140px; */
+          }
+          .second > p {
+            color: grey;
+          }
+          .second > button {
+            margin-left: 75px;
+            color: red;
+          }
+          .second > button:hover {
+            cursor: pointer;
+          }
+          .third {
+            /* border: 1px solid black; */
+            width: 600px;
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+          }
+          .third > div {
+            width: 300px;
+          }
+          .third > div > img {
+            width: 100%;
+            cursor: pointer;
+          }
+          .parent {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 80%;
+            margin-left: 150px;
+            /* height: 500px; */
+            margin-top: 20px;
+          }
+          .up {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            display: flex;
+            margin-bottom: 10px;
+          }
+          .up > div {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            padding: 20px;
+          }
+          .up > div:hover {
+            font-size: 20px;
+            cursor: pointer;
+          }
+          .up > div:first-child {
+            border: none;
+          }
+          /*  */
+          .left {
+            margin-top: 10px;
+            width: 60%;
+            /* margin-left: 30px; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+          .left > div {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            row-gap: 10px;
+          }
+          .left > div > div {
+            /* border: 1px solid red; */
+            height: 520px;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          }
+          .left > div > div > button {
+            /* border: 1px solid black; */
+            margin-left: 20px;
+            margin-right: 10px;
+            color: white;
+            background-color: red;
+            padding: 3px 5px 3px 5px;
+            border: none;
+          }
+          /* .right > div > div > button:first-child(2) {
+            padding: 5px 8px 5px 8px;
+          } */
+          .left > div > div > button:hover {
+            cursor: pointer;
+          }
+          .left > div > div > img {
+            width: 100%;
+          }
+          .right {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 40%;
+            height: 300px;
+            /* margin-top: 10px; */
+            margin-left: 20px;
+            position: sticky;
+            top: 90px;
+            z-index: -50;
+            margin-right: 20px;
+          }
+          .child {
+            display: flex;
+          }
+          .right > div:first-child {
+            /* border: 1px solid black; */
+            height: 60px;
+            text-align: center;
+            background-color: #e0e0e0;
+          }
+          .right p {
+            margin-left: 30px;
+            margin-top: 0px;
+          }
+          .right span {
+            margin-left: 200px;
+          }
+          #total {
+            margin-left: 30px;
+          }
+          .right button {
+            margin-top: 30px;
+            margin-left: 120px;
+            padding: 20px 90px 20px 90px;
+            background-color: red;
+            color: white;
+            border: none;
+          }
+          .right button:hover {
+            cursor: pointer;
+            font-size: 20px;
+          }
 
-      .bottom {
-        display: grid;
-        margin-top: 20px;
-      }
-      .bottom > div {
-        display: flex;
+          .bottom {
+            display: grid;
+            margin-top: 20px;
+          }
+          .bottom > div {
+            display: flex;
 
-        color: white;
-      }
-      .bottom > div > div:first-child {
-        margin-left: 150px;
-        margin-top: 10px;
-      }
-      .bottom > div > div:nth-child(2) {
-        margin-right: 200px;
-        margin-top: 10px;
-        margin-left: 20px;
-      }
-      .bottom > div > div:nth-child(2) > div {
-        display: flex;
-        width: 100px;
-      }
-      .bottom > div > div:nth-child(2) > div > img {
-        width: 40px;
-      }
-      #bottom-up {
-        background-color: #333333;
-      }
-      #bottom-down {
-        /* border: 1px solid red; */
-        display: flex;
-        background-color: black;
-        color: white;
-      }
-      #bottom-down > div:nth-child(1) {
-        display: flex;
-      }
-      #bottom-down > div > div:nth-child(2) {
-        margin-left: 200px;
-      }
-      #bottom-down > div:nth-child(2) {
-        /* border: 1px solid white; */
-        margin-left: 250px;
-      }
-      #bottom-down > div:nth-child(2) > div > div {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        /* gap:10px; */
+            color: white;
+          }
+          .bottom > div > div:first-child {
+            margin-left: 150px;
+            margin-top: 10px;
+          }
+          .bottom > div > div:nth-child(2) {
+            margin-right: 200px;
+            margin-top: 10px;
+            margin-left: 20px;
+          }
+          .bottom > div > div:nth-child(2) > div {
+            display: flex;
+            width: 100px;
+          }
+          .bottom > div > div:nth-child(2) > div > img {
+            width: 40px;
+          }
+          #bottom-up {
+            background-color: #333333;
+          }
+          #bottom-down {
+            /* border: 1px solid red; */
+            display: flex;
+            background-color: black;
+            color: white;
+          }
+          #bottom-down > div:nth-child(1) {
+            display: flex;
+          }
+          #bottom-down > div > div:nth-child(2) {
+            margin-left: 200px;
+          }
+          #bottom-down > div:nth-child(2) {
+            /* border: 1px solid white; */
+            margin-left: 250px;
+          }
+          #bottom-down > div:nth-child(2) > div > div {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            /* gap:10px; */
 
-        /* margin-top:100px; */
-      }
-      #bottom-down > div:nth-child(2) > div {
-        margin-left: 0px;
-      }
-      #images {
-        width: 300px;
-        height: 100px;
-        gap: 30px;
-        text-align: center;
-      }
-      .offers > button {
-        color: #6677a1;
-        margin-left: 700px;
-        background-color: #c6d4d9;
-        cursor: pointer;
-        padding: 10px 20px 10px 20px;
-        border-radius: 20px;
-        border: none;
-        margin-top: 50px;
-        margin-bottom: 10px;
-      }
-      .offers > button:hover {
-        color: black;
-      }
+            /* margin-top:100px; */
+          }
+          #bottom-down > div:nth-child(2) > div {
+            margin-left: 0px;
+          }
+          #images {
+            width: 300px;
+            height: 100px;
+            gap: 30px;
+            text-align: center;
+          }
+          .offers > button {
+            color: #6677a1;
+            margin-left: 700px;
+            background-color: #c6d4d9;
+            cursor: pointer;
+            padding: 10px 20px 10px 20px;
+            border-radius: 20px;
+            border: none;
+            margin-top: 50px;
+            margin-bottom: 10px;
+          }
+          .offers > button:hover {
+            color: black;
+          }
+
+            @media only screen and (max-width: 700px) {
+            /* Small Screen  */
+           #upper > div:nth-child(2) {
+              display: none;
+            }
+       #lower>input {
+             display:none;
+            }
+            #lower>button{
+               display:none;
+            }
+              .container>div:nth-child(7){
+              display:none;
+            }
+
+            .container>div:last-child{
+              display:none;
+            }
+            .bottom{
+              display:flex;
+              flex-direction:column;
+
+
+            }
+             .bottom > div{
+              flex-direction: column;
+             }
+             #bottom-down{
+              flex-direction: column;
+             }
+             #bottom-down>div{
+              flex-direction:column;
+             }
+             .child{
+               display:flex;
+               flex-direction: column;
+             }
+             .upper{
+               flex-direction: column;
+             }
+             .third{
+               flex-direction: column;
+             }
+             .left > div {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+           }
+
+          }
+          #msg{
+
+           text-align: center;
+           margin-top:20px;
+           font-size:xx-large;
+           font-weight: bold;
+          }
+
+          */
     </style>
   </head>
   <body>
@@ -394,7 +457,7 @@
       </div>
     </div>
     <div class="closest">
-      <a href="./homepage.html">CLOSEST PURCHASE ></a>
+      <a href="./index.html">CLOSEST PURCHASE ></a>
       <a href="">DEALS IN NEW DELHI ></a>
       <a href="">ALL RESTAURANT OFFERS IN NEW DELHI</a>
     </div>
@@ -425,13 +488,16 @@
         </div>
       </div>
     </div>
+    <!--  -->
+    <div id="msg">Welcome To The Cart Page</div>
+    <!--  -->
     <div class="parent">
       <div class="up">
-        <div>Food Product</div>
+        <div><a href="./restaurant.html">Food Product</a></div>
         <div>Photos</div>
         <div>About</div>
       </div>
-      <!--  -->
+
       <div class="child">
         <div class="left">
           <div id="container"></div>
@@ -445,11 +511,8 @@
             <p>(Inc. of all taxes)</p>
           </div>
           <hr />
-          <button>BUY NOW</button>
+          <button id="book">BUY NOW</button>
         </div>
-        <!--  -->
-
-        <!--  -->
       </div>
     </div>
     <div class="offers">
@@ -570,6 +633,8 @@
   function Display(cart) {
     container.innerHTML = "";
     let total = document.getElementById("cart-total");
+    let msg = document.getElementById("msg");
+    let change = document.getElementById("change");
 
     Cart.forEach((element) => {
       let card = document.createElement("div");
@@ -604,7 +669,7 @@
         });
         localStorage.setItem("cart", JSON.stringify(Cart));
         Display();
-        window.location.href = "./restaurant.html";
+        // window.location.href = "./restaurant.html";
       });
 
       Increment.addEventListener("click", () => {
@@ -642,5 +707,10 @@
       console.log(sum);
     }
     total.innerText = sum;
+
+    if (total.innerText == 0) {
+      alert("Your Cart is Empty");
+      msg.innerText = "Your Cart is Empty";
+    }
   }
 </script>
