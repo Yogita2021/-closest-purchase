@@ -406,7 +406,13 @@
           flex-direction: column;
         }
       }
-      #bottom-down > div:hover {
+      #bottom-down > div > div > h3:hover,
+      #bottom-down > div > div > h4:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      #bottom-down > div > h3:hover,
+      #bottom-down > div > div > div > p:hover {
         text-decoration: underline;
         cursor: pointer;
       }

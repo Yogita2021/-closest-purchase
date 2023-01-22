@@ -90,11 +90,17 @@
         <hr />
         <div id="login">
           <form id="form1">
-            <input type="email" id="email" placeholder="Enter your email" />
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
             <input
               type="password"
               id="password"
               placeholder="Enter your password"
+              required
             />
             <input type="submit" value="Submit" />
           </form>
@@ -114,14 +120,25 @@
       formEl.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        if (
-          emailEl1.value === lsData[i].email &&
-          passwordEl.value === lsData[i].password
-        ) {
-          alert("log in successfuly");
-          window.location.href = "./index.html";
+        // if (
+        //   emailEl1.value === lsData[i].email &&
+        //   passwordEl.value === lsData[i].password
+        // ) {
+        //   alert("log in successfuly");
+        //   window.location.href = "./index.html";
+        // } else {
+        //   alert("Wrong Credentials");
+        // }
+
+        if (emailEl1.value === lsData[i].email) {
+          if (passwordEl.value === lsData[i].password) {
+            alert("log in successfuly");
+            window.location.href = "./index.html";
+          } else {
+            alert("Wrong Credentials");
+          }
         } else {
-          alert("Wrong Credentials");
+          alert("Invalid Username");
         }
       });
     }

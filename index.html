@@ -383,10 +383,15 @@
          }
         
       }
-     #bottom-down>div:hover{
+     #bottom-down>div>div>h3:hover,  #bottom-down>div>div>h4:hover{
       text-decoration: underline;
       cursor: pointer;
      }
+     #bottom-down>div>h3:hover, #bottom-down>div>div>div>p:hover{
+      text-decoration: underline;
+      cursor: pointer;
+     }
+    
 
     </style>
   </head>
@@ -503,6 +508,12 @@
       <div class="mySlides fade">
         <img
           src="https://img4.nbstatic.in/tr:w-2800/63b3af1e22b317000c1336a8.jpg"
+          style="width: 100%"
+        />
+      </div>
+       <div class="mySlides fade">
+        <img
+          src="https://img4.nbstatic.in/tr:w-2800/63bfbb0d8db992000b7a17dc.jpg"
           style="width: 100%"
         />
       </div>
@@ -686,8 +697,8 @@
       slides[i].style.display = "none";
     }
 
-    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 0].style.display = "block";
   }
 //   
-// /
+
 </script>
